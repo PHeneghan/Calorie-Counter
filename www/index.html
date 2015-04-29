@@ -38,17 +38,26 @@
   </ion-header-bar>
   <ion-content scroll="false">
 	<div class="card">
-	  <div class="item item-text-wrap">
+	  <div class="item item-text-wrap" id = "cals">
 		2000
 	  </div>
 	</div>
-	<div> 
-        <label>First Name<br>
-        <input id="firstname" name="firstname" type="text" placeholder="First name only" required autofocus> 
-		</br>
-		</label>
-    </div>
-    <div><center><h1><font color ="red"> Hello D&D<font> </h1></center></div>
+	
+	<div class="list">
+
+  <div class="item item-input-inset">
+    <label class="item-input-wrapper">
+      <input type="text" placeholder="0">
+    </label>
+    <button class="button button-small">
+      Submit
+    </button>
+  </div>
+
+  </div>
+	
+	
+    
 
         <div>
           <center>
@@ -62,22 +71,17 @@
         <div>
         <center>
           <a class="button button-energized" onclick="incDec('-1')">
-            -1
+            10 Calories
           </a>
-          &nbsp; &nbsp;
-          <a class="button button-positive" onclick="incDec('1')" >
-            +1
-          </a>
+          
         </center>
+		</br>
         </div>
  <center>
           <a class="button button-energized" onclick="incDec('-5')" >
-            -5
+            100 Calories
           </a>
-          &nbsp; &nbsp;
-          <a class="button button-positive" onclick="incDec('5')" >
-            +5
-          </a>
+          
         </center>
         </div>
         <br/>
