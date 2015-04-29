@@ -37,7 +37,60 @@
     </button>
   </ion-header-bar>
   <ion-content scroll="false">
-    <ion-list>
+    <div><center><h1><font color ="red"> Hello D&D<font> </h1></center></div>
+
+        <div>
+          <center>
+           <h2>
+             <div id = "myLife">
+                20
+             </div>
+          </h2>
+          </center>
+        </div>
+        <div>
+        <center>
+          <a class="button button-energized" onclick="incDec('-1')">
+            -1
+          </a>
+          &nbsp; &nbsp;
+          <a class="button button-positive" onclick="incDec('1')" >
+            +1
+          </a>
+        </center>
+        </div>
+ <center>
+          <a class="button button-energized" onclick="incDec('-5')" >
+            -5
+          </a>
+          &nbsp; &nbsp;
+          <a class="button button-positive" onclick="incDec('5')" >
+            +5
+          </a>
+        </center>
+        </div>
+        <br/>
+        <div>
+          <center>
+             <a class="button button-royal" onclick="rollDice()" >
+                Dice Roll
+             </a>
+                &nbsp; &nbsp;
+              <a id = "diceRoll" class="button button-balanced">
+                0
+             </a>
+          </center>
+        </div>
+        <br/>
+        <div>
+          <center>
+ <a class="button button-large button-assertive" onclick="resetButton()" >
+                Reset
+             </a>
+          </center>
+        </div>
+
+	<ion-list>
       
 	  <ion-item ng-repeat="task in activeProject.tasks">
         {{task.title}}

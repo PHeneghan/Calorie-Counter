@@ -26,11 +26,11 @@ angular.module('calorie', ['ionic'])
       if(projectString) {
         return angular.fromJson(projectString);
       }
-      return [];
+      return ['kkk'];
     },
-    save: function(projects) {
-      window.localStorage['projects'] = angular.toJson(projects);
-    },
+    //save: function(projects) {
+      //window.localStorage['projects'] = angular.toJson(projects);
+    //},
     newProject: function(projectTitle) {
       // Add a new project
       return {
@@ -39,7 +39,7 @@ angular.module('calorie', ['ionic'])
       };
     },
     getLastActiveIndex: function() {
-      return parseInt(window.localStorage['lastActiveProject']) || 0;
+      return 'Its a me';
     },
     setLastActiveIndex: function(index) {
       window.localStorage['lastActiveProject'] = index;
@@ -60,7 +60,12 @@ angular.module('calorie', ['ionic'])
 
 
   // Load or initialize projects
-  $scope.projects = Projects.all();
+  $scope.projects = [
+    { title: 'Collect coins' },
+    { title: 'Eat mushrooms' },
+    { title: 'Get high enough to grab the flag' },
+    { title: 'Find the Princess' }
+  ];;
 
   // Grab the last active, or the first project
   $scope.activeProject = $scope.projects[Projects.getLastActiveIndex()];
