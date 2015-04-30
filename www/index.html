@@ -19,11 +19,11 @@
     function entCal(){
 		var x = document.getElementById('calenter').value;
 		var y = parseInt(x);
-        var currentLife = parseInt(document.getElementById("cals").innerHTML)+ y;
-		if(currentLife <=0){
+        var currentCals = parseInt(document.getElementById("cals").innerHTML)+ y;
+		if(currentCals <=0){
            document.getElementById("cals").innerHTML = 0;
         }else{
-           document.getElementById("cals").innerHTML = currentLife;
+           document.getElementById("cals").innerHTML = currentCals;
         }
     }
 	
@@ -31,16 +31,16 @@
 	
 	function addCal(plusMinus){
         var plusMinus = parseInt(plusMinus);
-        var currentLife = parseInt(document.getElementById("cals").innerHTML)+ plusMinus;
-        if(currentLife <=0){
+        var currentCals = parseInt(document.getElementById("cals").innerHTML)+ plusMinus;
+        if(currentCals <=0){
            document.getElementById("cals").innerHTML = 0;
         }else{
-           document.getElementById("cals").innerHTML = currentLife;
+           document.getElementById("cals").innerHTML = currentCals;
         }
     }
 
     function resetButton() {
- document.getElementById("cals").innerHTML = 0;
+		document.getElementById("cals").innerHTML = 0;
     }
 
    
@@ -59,116 +59,188 @@
 
   <ion-side-menus>
   
- <ion-side-menu-content>
-  <ion-header-bar class="bar-dark">
-    <button class="button button-icon" ng-click="toggleProjects()">
-      <i class="icon ion-navicon"></i>
-    </button>
-    <h1 class="title"><!--{{activeProject.title}}-->Calorie Counter</h1>
-    <!-- New Task button-->
-    <button class="button button-icon" ng-click="newTask()">
-      <i class="icon ion-compose"></i>
-    </button>
-  </ion-header-bar>
-  <ion-content scroll="false">
-	<div class="card">
-	  <div class="item item-text-wrap" id = "cals" align="right">
-		0
+  <ion-side-menu-content>
+    <ion-header-bar class="bar-dark">
+      <button class="button button-icon" ng-click="toggleProjects()">
+        <i class="icon ion-navicon"></i>
+      </button>
+      <h1 class="title"><!--{{activeProject.title}}-->Calorie Counter</h1>
+      <!-- New Task button-->
+      
+    </ion-header-bar>
+    <ion-content scroll="false">
+	  <div class="card">
+	    <div class="item item-text-wrap" id = "cals" align="right">
+	    	0
+	    </div>
 	  </div>
-	</div>
-	<div id = "w">
-	l
-	</div>
-	<div class="list">
+	  <div class="list">
 
-  <div class="item item-input-inset">
-    <label class="item-input-wrapper" >
-      <input type="number" placeholder="0" id="calenter">
-    </label>
-    <button class="button button-small" onclick="entCal()">
-      Submit
-    </button>
-  </div>
-    </br>
-         <div>
-        <center>
-          <a class="button button-small button-energized" onclick="addCal('10')">
-            10 Calories
-          </a>
-          
-        </center>
-		</br>
+	    <div class="item item-input-inset">
+          <label class="item-input-wrapper" >
+            <input type="text" value="0" id="calenter"></input>
+          </label>
+          <button class="button button-small" onclick="entCal()">
+            Submit
+          </button>
         </div>
- <center>
+        </br>
+        <div>
+          <center>
+              <a class="button button-small button-energized" onclick="addCal('10')">
+                10 Calories
+              </a>
+          
+          </center>
+		  </br>
+        </div>
+        <center>
           <a class="button button-small button-energized" onclick="addCal('100')" >
             100 Calories
           </a>
           
         </center>
-        </div>
-        <br/>
+	    <br/>
         
         <div>
-          <center>
- <a class="button button-small button-assertive" onclick="resetButton()" >
-                Reset
-             </a>
+  
+        <center>
+		    <a class="button button-small button-assertive" onclick="resetButton()" >
+              Reset
+            </a>
           </center>
         </div>
+      </div>
+	  <div class="bar bar-footer bar-calm">
+        <div class="title">Pearse is great (",)</div>
+      </div>
+        
 
-	<ion-list>
+	  <ion-list>
       
-	  <ion-item ng-repeat="task in activeProject.tasks">
-        {{task.title}}
-      </ion-item>
-    </ion-list>
-  </ion-content>
-</ion-side-menu-content>
-
-    <!-- Left menu -->
-    <ion-side-menu side="left">
-    <ion-header-bar class="bar-dark">
-      <h1 class="title">Projects</h1>
-      <button class="button button-icon ion-plus" ng-click="newProject()">
-      </button>
-    </ion-header-bar>
-    <ion-content scroll="false">
-      <ion-list>
-        <ion-item ng-repeat="project in projects" ng-click="selectProject(project, $index)" ng-class="{active: activeProject == project}">
-          {{project.title}}
+	    <ion-item ng-repeat="task in activeProject.tasks">
+          {{task.title}}
         </ion-item>
       </ion-list>
     </ion-content>
-  </ion-side-menu>
+    </ion-side-menu-content>
 
-  </ion-side-menus>
-  <script id="new-task.html" type="text/ng-template">
+      <!-- Left menu -->
+      <ion-side-menu side="left">
+      <ion-header-bar class="bar-dark">
+        <h1 class="title">Projects</h1>
+      </ion-header-bar>
+      <ion-content>
+        <ion-list>
+          <ion-item>
+            
+			<div class="list">
 
-  <div class="modal">
+			  <div class="item item-button-right">
+				Can of Coke
+				<button class="button button-small button-energized" onclick="addCal('139')">
+				  139
+				</button>
+			  </div>
+			  
+			  <div class="item item-button-right">
+				Big Mac Meal
+				<button class="button button-small button-energized" onclick="addCal('1150')">
+				  1150
+				</button>
+			  </div>
+			
+			  <div class="item item-button-right">
+				Pint of Guinness
+				<button class="button button-small button-energized" onclick="addCal('139')">
+				  210
+				</button>
+			  </div>
+			  
+			  <div class="item item-button-right">
+				Big Mac Meal
+				<button class="button button-small button-energized" onclick="addCal('1150')">
+				  1150
+				</button>
+			  </div>
+			  
+			  <div class="item item-button-right">
+				Can of Coke
+				<button class="button button-small button-energized" onclick="addCal('139')">
+				  139
+				</button>
+			  </div>
+			  
+			  <div class="item item-button-right">
+				Big Mac Meal
+				<button class="button button-small button-energized" onclick="addCal('1150')">
+				  1150
+				</button>
+			  </div>
+			  
+			  <div class="item item-button-right">
+				Can of Coke
+				<button class="button button-small button-energized" onclick="addCal('139')">
+				  139
+				</button>
+			  </div>
+			  
+			  <div class="item item-button-right">
+				Big Mac Meal
+				<button class="button button-small button-energized" onclick="addCal('1150')">
+				  1150
+				</button>
+			  </div>
+			  
+			  <div class="item item-button-right">
+				Can of Coke
+				<button class="button button-small button-energized" onclick="addCal('139')">
+				  139
+				</button>
+			  </div>
+			  
+			  <div class="item item-button-right">
+				Big Mac Meal
+				<button class="button button-small button-energized" onclick="addCal('1150')">
+				  1150
+				</button>
+			  </div>
 
-    <!-- Modal header bar -->
-    <ion-header-bar class="bar-secondary">
-      <h1 class="title">New Big Task</h1>
-      <button class="button button-clear button-positive" ng-click="closeNewTask()">Cancel</button>
-    </ion-header-bar>
+			  
+          </ion-item>
+        </ion-list>
+      </ion-content>
+      </ion-side-menu>
 
-    <!-- Modal content area -->
-    <ion-content>
+    </ion-side-menus>
+    <script id="new-task.html" type="text/ng-template">
 
-      <form ng-submit="createTask(task)">
-        <div class="list">
-          <label class="item item-input">
-            <input type="text" placeholder="What do you need to do?" ng-model="task.title">
-          </label>
-        </div>
-        <div class="padding">
-          <button type="submit" class="button button-block button-positive">Create Task</button>
-        </div>
-      </form>
+    <div class="modal">
 
-    </ion-content>
+      <!-- Modal header bar -->
+      <ion-header-bar class="bar-secondary">
+        <h1 class="title">New Big Task</h1>
+        <button class="button button-clear button-positive" ng-click="closeNewTask()">Cancel</button>
+      </ion-header-bar>
 
-  </div>
+      <!-- Modal content area -->
+      <ion-content>
+
+        <form ng-submit="createTask(task)">
+          <div class="list">
+            <label class="item item-input">
+              <input type="text" placeholder="What do you need to do?" ng-model="task.title">
+            </label>
+          </div>
+          <div class="padding">
+            <button type="submit" class="button button-block button-positive">Create Task</button>
+          </div>
+        </form>
+
+      </ion-content>
+	  
+
+    </div>
 
   
  
