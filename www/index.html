@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <title>Todo</title>
+    <title>Calorie</title>
 
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
     
@@ -16,7 +16,20 @@
     <!-- your app's js -->
     <script type ="text/javascript">
 
-    function incDec(plusMinus){
+    function entCal(){
+		var x = document.getElementById('calenter').value;
+		var y = parseInt(x);
+        var currentLife = parseInt(document.getElementById("cals").innerHTML)+ y;
+		if(currentLife <=0){
+           document.getElementById("cals").innerHTML = 0;
+        }else{
+           document.getElementById("cals").innerHTML = currentLife;
+        }
+    }
+	
+	
+	
+	function addCal(plusMinus){
         var plusMinus = parseInt(plusMinus);
         var currentLife = parseInt(document.getElementById("cals").innerHTML)+ plusMinus;
         if(currentLife <=0){
@@ -28,7 +41,6 @@
 
     function resetButton() {
  document.getElementById("cals").innerHTML = 0;
-        document.getElementById("diceRoll").innerHTML = 0;
     }
 
    
@@ -64,21 +76,23 @@
 		0
 	  </div>
 	</div>
-	
+	<div id = "w">
+	l
+	</div>
 	<div class="list">
 
   <div class="item item-input-inset">
     <label class="item-input-wrapper" >
-      <input type="text" placeholder="0">
+      <input type="number" placeholder="0" id="calenter">
     </label>
-    <button class="button button-small">
+    <button class="button button-small" onclick="entCal()">
       Submit
     </button>
   </div>
     </br>
          <div>
         <center>
-          <a class="button button-small button-energized" onclick="incDec('10')">
+          <a class="button button-small button-energized" onclick="addCal('10')">
             10 Calories
           </a>
           
@@ -86,7 +100,7 @@
 		</br>
         </div>
  <center>
-          <a class="button button-small button-energized" onclick="incDec('100')" >
+          <a class="button button-small button-energized" onclick="addCal('100')" >
             100 Calories
           </a>
           
