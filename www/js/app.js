@@ -123,3 +123,46 @@ angular.module('calorie', ['ionic'])
   
 
 })
+
+function entCal(){
+	var x = document.getElementById('calenter').value;
+	var y = parseInt(x);
+    var currentCals = parseInt(document.getElementById("cals").innerHTML)+ y;
+	if(currentCals <=0){
+        document.getElementById("cals").innerHTML = 0;
+		document.getElementById("calenter").innerHTML = 0;
+    }else{
+        document.getElementById("cals").innerHTML = currentCals;
+		document.getElementById("calenter").innerHTML = 0;
+    }
+}
+	
+	
+	
+function addCal(setCals){
+    var setCal = parseInt(setCals);
+    var currentCals = parseInt(document.getElementById("cals").innerHTML)+ setCal;
+    if(currentCals <=0){
+        document.getElementById("cals").innerHTML = 0;
+    }else{
+        document.getElementById("cals").innerHTML = currentCals;
+    }
+}
+
+function resetButton() {
+	document.getElementById("cals").innerHTML = 0;
+}
+
+function BMImetric() {
+  var a = document.getElementById('varA').value;
+  var b = document.getElementById('varB').value;
+  var c = Number(a) / ( Number(b) * Number(b));
+  document.getElementById("BMI").innerHTML = c;
+}
+
+function BMIimperal() {
+  var a = document.getElementById('varA').value;
+  var b = document.getElementById('varB').value;
+  var c = (Number(a) * 703) / ( Number(b) * Number(b));
+  document.getElementById("BMI").innerHTML = c;
+}
