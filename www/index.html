@@ -28,22 +28,25 @@
   
   <ion-side-menu-content>
     <ion-header-bar class="bar-dark">
-      <button class="button button-icon" ng-click="toggleProjects()">
-        <i class="icon ion-navicon"></i>
+      <button class="button button-icon icon-right ion-chevron-right" ng-click="toggleProjects()">
+        Food
       </button>
       <h1 class="title">Calorie Counter</h1>
-      <button class="button button-icon" ng-click="newTask()">
-        <i class="icon ion-compose"></i>
+      <button class="button button-icon icon-left ion-chevron-left" ng-click="newTask()">
+        BMI
       </button>
       
     </ion-header-bar>
     <ion-content scroll="false">
+	  
+	  <div class="list">
+	  <center><h4>Your Calories</h4><center>
 	  <div class="card">
-	    <div class="item item-text-wrap" id = "cals" align="right">
+	    <div class="item item-text-wrap" id = "cals" align="center">
 	    	0
 	    </div>
 	  </div>
-	  <div class="list">
+	  
 
 	    <div class="item item-input-inset">
           <label class="item-input-wrapper" >
@@ -54,36 +57,40 @@
           </button>
         </div>
         </br>
-        <div>
-          <center>
-              <a class="button button-small button-energized" onclick="addCal('10')">
+        <div class ="card">
+		  <div>
+            <center>
+			Calorie Quick Add
+              <a class="button button-small button-block button-energized" onclick="addCal('10')">
                 10 Calories
               </a>
           
-          </center>
-		  </br>
-        </div>
-        <center>
-          <a class="button button-small button-energized" onclick="addCal('100')" >
-            100 Calories
-          </a>
+            </center>
+		    
+          </div>
+		  <div>
+            <center>
+              <a class="button button-small button-block button-energized" onclick="addCal('100')" >
+              100 Calories
+            </a>
           
-        </center>
-	    <br/>
+            </center>
+	      </div>
+		</div>
         
-        <div>
+        <div class="card">
   
         <center>
-		    <a class="button button-small button-assertive" onclick="resetButton()" >
+		    <a class="button button-small button-block button-assertive" onclick="resetButton()" >
               Reset
             </a>
           </center>
         </div>
       </div>
 	  <div class="bar bar-footer bar-calm">
-        <div class="title">Pearse is great (",)</div>
+        <div class="title">Live Long and Healthy </div>
       </div>
-        
+      
 
 	  
     </ion-content>
@@ -116,56 +123,56 @@
 			
 			  <div class="item item-button-right">
 				Pint of Guinness
-				<button class="button button-small button-energized" onclick="addCal('139')">
+				<button class="button button-small button-energized" onclick="addCal('210')">
 				  210
 				</button>
 			  </div>
 			  
 			  <div class="item item-button-right">
 				Apple
-				<button class="button button-small button-energized" onclick="addCal('1150')">
+				<button class="button button-small button-energized" onclick="addCal('53')">
 				  53
 				</button>
 			  </div>
 			  
 			  <div class="item item-button-right">
 				Banana
-				<button class="button button-small button-energized" onclick="addCal('139')">
+				<button class="button button-small button-energized" onclick="addCal('48')">
 				  48
 				</button>
 			  </div>
 			  
 			  <div class="item item-button-right">
 				Glass of Wine
-				<button class="button button-small button-energized" onclick="addCal('1150')">
+				<button class="button button-small button-energized" onclick="addCal('160')">
 				  160
 				</button>
 			  </div>
 			  
 			  <div class="item item-button-right">
 				Steak and Chips
-				<button class="button button-small button-energized" onclick="addCal('139')">
+				<button class="button button-small button-energized" onclick="addCal('550')">
 				  550
 				</button>
 			  </div>
 			  
 			  <div class="item item-button-right">
 				Roast and Mash
-				<button class="button button-small button-energized" onclick="addCal('1150')">
+				<button class="button button-small button-energized" onclick="addCal('493')">
 				  493
 				</button>
 			  </div>
 			  
 			  <div class="item item-button-right">
 				Mars Bar
-				<button class="button button-small button-energized" onclick="addCal('139')">
+				<button class="button button-small button-energized" onclick="addCal('280')">
 				  280
 				</button>
 			  </div>
 			  
 			  <div class="item item-button-right">
 				Deep Fried Mars Bar
-				<button class="button button-small button-energized" onclick="addCal('1150')">
+				<button class="button button-small button-energized" onclick="addCal('1500')">
 				  1500
 				</button>
 			  </div>
@@ -184,32 +191,34 @@
       <!-- Modal header bar -->
       <ion-header-bar class="bar-secondary">
         <h1 class="title">BMI Calculator </h1>
-        <button class="button button-clear button-positive" ng-click="closeNewTask()">Cancel</button>
+        <button class="button button-clear button-positive ion-chevron-left" ng-click="closeNewTask()">Back</button>
       </ion-header-bar>
 
       <!-- Modal content area -->
       <ion-content>
 	  
 	    <div class="card">
-		  <h4>Your BMI</h4>
-	      <div class="item item-text-wrap" id = "BMI" align="right">
-	    	0
-	      </div>
+		  <center>
+		    <h4>Your BMI</h4>
+	        <div class="item item-text-wrap" id = "BMI" align="center">
+	    	  0
+	        </div>
+		  </center>
 	    </div>
-	    
+	    <center>
 		<div class="card">
 		  <h4>Calculate BMI metric</h4>
 		  <h5>Weight in Kg</h5>
 		  <label class="item-input-wrapper" >
-		    <input type="text" value="0" id="varA">
+		    <input type="text" placeholder="0" id="varA">
 		  </label>
 		  <h5>Height in Meters</h5>
 		  <label class="item-input-wrapper" >
-            <input type="text" value="0" id="varB">
+            <input type="text" placeholder="0" id="varB">
 		  </label>
           <input type="button" value="Add" onclick="BMImetric(varA, varB)">
         </div>
-		 
+		</center> 
 
         
       </ion-content>
