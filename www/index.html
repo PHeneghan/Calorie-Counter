@@ -195,9 +195,9 @@
       </ion-header-bar>
 
       <!-- Modal content area -->
-      <ion-content class="bmi">
+      <ion-content class="calculator">
 	  
-	    <div class="card bmi-card">
+	    <div class="card food-slide">
 		  <center>
 		    <h4>Your BMI</h4>
 	        <div class="item item-text-wrap" id = "BMI" align="center">
@@ -206,19 +206,19 @@
 		  </center>
 	    </div>
 	    <center>
-		<div class="card bmi-card">
-		  <h4>Calculate BMI metric</h4>
-		  <h5>Weight in Kg</h5>
-		  <label class="item-input-wrapper" >
-		    <input type="text" placeholder="0" id="varA">
-		  </label>
-		  <h5>Height in Meters</h5>
-		  <label class="item-input-wrapper" >
-            <input type="text" placeholder="0" id="varB">
-		  </label>
-		  </br>
-          <input type="button" value="Add" onclick="BMImetric(varA, varB)">
-        </div>
+		  <div class="card food-slide">
+		    <h4>Calculate BMI metric</h4>
+		    <h5>Weight in Kg</h5>
+		    <label class="item-input-wrapper" >
+		      <input type="text" placeholder="0" id="varA">
+		    </label>
+		    <h5>Height in Meters</h5>
+		    <label class="item-input-wrapper" >
+              <input type="text" placeholder="0" id="varB">
+		    </label>
+		    </br>
+            <input type="button" value="Calculate BMI" onclick="BMImetric(varA, varB)">
+          </div>
 		</center> 
 
         
