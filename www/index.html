@@ -6,7 +6,8 @@
     <title>Calorie</title>
 
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
-    
+	
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
 
     
 
@@ -16,7 +17,7 @@
     <!-- your app's js -->
     
 	<!-- cordova script (this will be a 404 during development) -->
-    <!--<script src="cordova.js"></script>-->
+    <script src="cordova.js"></script>
 	<script src="js/app.js"></script
 	
 	
@@ -37,48 +38,47 @@
       </button>
       
     </ion-header-bar>
-    <ion-content scroll="false">
+    <ion-content scroll="false" class="calculator">
 	  
-	  <div class="list">
-	  <center><h4>Your Calories</h4><center>
-	  <div class="card">
-	    <div class="item item-text-wrap" id = "cals" align="center">
+	  <div class="list ">
+	    <center><h4>Your Calories</h4><center>
+	    <div class="card">
+	      <div class="item item-text-wrap" id = "cals" align="center">
 	    	0
+	      </div>
 	    </div>
-	  </div>
 	  
 
-	    <div class="item item-input-inset">
-          <label class="item-input-wrapper" >
+	    <div class="card card-colour">
+          <div class = "row">
+		  <label class="item-input-wrapper col col-75" >
             <input type="text" value="0" id="calenter"></input>
           </label>
-          <button class="button button-small" onclick="entCal()">
+          <button class="button button-small col" onclick="entCal()">
             Submit
           </button>
+		  </div>
         </div>
         </br>
-        <div class ="card">
-		  <div>
-            <center>
-			Calorie Quick Add
-              <a class="button button-small button-block button-energized" onclick="addCal('10')">
-                10 Calories
-              </a>
-          
-            </center>
-		    
-          </div>
-		  <div>
-            <center>
-              <a class="button button-small button-block button-energized" onclick="addCal('100')" >
-              100 Calories
-            </a>
-          
-            </center>
-	      </div>
+        <div class ="card card-colour">
+		  <center>
+		    Calorie Quick Add
+		    <div class="button-bar">
+
+              <a class="button button-small button-block button-royal" onclick="addCal('1')">1 Calories</a>
+			  <a class="button button-small button-block button-calm" onclick="addCal('5')">5 Calories</a>
+			  <a class="button button-small button-block button-royal" onclick="addCal('10')">10 Calories</a>		    
+            </div>
+			<div class="button-bar">
+            
+              <a class="button button-small button-block button-royal" onclick="addCal('25')">25 Calories</a>
+			  <a class="button button-small button-block button-calm" onclick="addCal('50')">50 Calories</a>
+			  <a class="button button-small button-block button-royal" onclick="addCal('100')">100 Calories</a>		    
+            </div>
+		  </center>
 		</div>
         
-        <div class="card">
+        <div class="card card-colour">
   
         <center>
 		    <a class="button button-small button-block button-assertive" onclick="resetButton()" >
@@ -87,7 +87,7 @@
           </center>
         </div>
       </div>
-	  <div class="bar bar-footer bar-calm">
+	  <div class="bar bar-footer bar-balanced">
         <div class="title">Live Long and Healthy </div>
       </div>
       
@@ -99,13 +99,13 @@
       <!-- Left menu -->
       <ion-side-menu side="left">
       <ion-header-bar class="bar-dark">
-        <h1 class="title">Projects</h1>
+        <h1 class="title">List of Food</h1>
       </ion-header-bar>
       <ion-content>
         <ion-list>
-          <ion-item>
+          <ion-item class="food-slide">
             
-			<div class="list">
+			<div>
 
 			  <div class="item item-button-right">
 				Can of Coke
@@ -189,15 +189,15 @@
     <div class="modal">
 
       <!-- Modal header bar -->
-      <ion-header-bar class="bar-secondary">
+      <ion-header-bar class="bar-secondary bar-dark">
         <h1 class="title">BMI Calculator </h1>
         <button class="button button-clear button-positive ion-chevron-left" ng-click="closeNewTask()">Back</button>
       </ion-header-bar>
 
       <!-- Modal content area -->
-      <ion-content>
+      <ion-content class="bmi">
 	  
-	    <div class="card">
+	    <div class="card bmi-card">
 		  <center>
 		    <h4>Your BMI</h4>
 	        <div class="item item-text-wrap" id = "BMI" align="center">
@@ -206,7 +206,7 @@
 		  </center>
 	    </div>
 	    <center>
-		<div class="card">
+		<div class="card bmi-card">
 		  <h4>Calculate BMI metric</h4>
 		  <h5>Weight in Kg</h5>
 		  <label class="item-input-wrapper" >
@@ -216,6 +216,7 @@
 		  <label class="item-input-wrapper" >
             <input type="text" placeholder="0" id="varB">
 		  </label>
+		  </br>
           <input type="button" value="Add" onclick="BMImetric(varA, varB)">
         </div>
 		</center> 
