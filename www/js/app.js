@@ -19,6 +19,9 @@ angular.module('calorie', ['ionic'])
   });
 })
 
+/* Below section is from the todo app for the labs
+ * It is the side list of food.
+ */
 .factory('Projects', function() {
   return {
     all: function() {
@@ -28,9 +31,7 @@ angular.module('calorie', ['ionic'])
       }
       return ['kkk'];
     },
-    //save: function(projects) {
-      //window.localStorage['projects'] = angular.toJson(projects);
-    //},
+    
     newProject: function(projectTitle) {
       // Add a new project
       return {
@@ -47,6 +48,7 @@ angular.module('calorie', ['ionic'])
   }
 })
 
+/* Below section is from the todo app for the labs*/
 .controller('CalCtrl', function($scope, $timeout, $ionicModal, Projects, $ionicSideMenuDelegate) {
 
   // A utility function for creating a new project
@@ -60,6 +62,7 @@ angular.module('calorie', ['ionic'])
 
 
   // Create our modal
+  // It is the BMI Calculator
   $ionicModal.fromTemplateUrl('new-task.html', function(modal) {
     $scope.taskModal = modal;
   }, {
@@ -83,6 +86,7 @@ angular.module('calorie', ['ionic'])
 
 })
 
+// This function is to add the manually entered calories to the total count.
 function entCal(){
 	var x = document.getElementById('calenter').value;
 	var y = parseInt(x);
@@ -97,7 +101,7 @@ function entCal(){
 }
 	
 	
-	
+//This function is to add the pre-set calorie amounts to the total. 
 function addCal(setCals){
     var setCal = parseInt(setCals);
     var currentCals = parseInt(document.getElementById("cals").innerHTML)+ setCal;
@@ -112,6 +116,8 @@ function resetButton() {
 	document.getElementById("cals").innerHTML = 0;
 }
 
+
+// Calculates the BMI
 function BMImetric() {
   var a = document.getElementById('varA').value;
   var b = document.getElementById('varB').value;
@@ -119,9 +125,3 @@ function BMImetric() {
   document.getElementById("BMI").innerHTML = c;
 }
 
-function BMIimperal() {
-  var a = document.getElementById('varA').value;
-  var b = document.getElementById('varB').value;
-  var c = (Number(a) * 703) / ( Number(b) * Number(b));
-  document.getElementById("BMI").innerHTML = c;
-}
